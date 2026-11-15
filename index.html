@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>Untuk Zerlina, dengan tulus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f2eb;
+      --ink: #302d28;
+      --muted: #656158;
+      --rose: #a35b43;
+      --line: #ddd6ca;
+      --leaf: #49675d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .signature-mark {
+      color: var(--rose);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    main {
+      min-height: calc(100vh - 142px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.94fr) minmax(340px, 1.06fr);
+      gap: clamp(42px, 8vw, 112px);
+      align-items: center;
+      padding: 64px 0 72px;
+    }
+
+    .copy { max-width: 470px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--rose);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1, h2 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.12;
+    }
+
+    h1 { font-size: clamp(43px, 5.2vw, 68px); }
+
+    h1 span {
+      display: block;
+      color: var(--rose);
+      font-style: italic;
+    }
+
+    .intro {
+      max-width: 390px;
+      margin: 24px 0 30px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .read-button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      gap: 13px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 2px;
+      background: var(--ink);
+      color: white;
+      cursor: pointer;
+      font: 600 14px "DM Sans", sans-serif;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .read-button:hover { background: var(--rose); transform: translateY(-2px); }
+    .read-button:focus-visible { outline: 3px solid #c99170; outline-offset: 4px; }
+
+    .arrow { font-size: 18px; line-height: 1; }
+
+    .photo-wrap {
+      position: relative;
+      aspect-ratio: 1.55;
+      background: #d4c8b7;
+    }
+
+    .photo-wrap::after {
+      position: absolute;
+      z-index: 1;
+      inset: 14px -14px -14px 14px;
+      border: 1px solid #9a8069;
+      content: "";
+      pointer-events: none;
+    }
+
+    .photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 43% center;
+    }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      padding: 12px 16px;
+      background: rgba(245, 242, 235, .95);
+      color: var(--leaf);
+      font-size: 12px;
+    }
+
+    .letter {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 0 82px;
+      scroll-margin-top: 40px;
+    }
+
+    .letter[hidden] { display: none; }
+
+    .letter-inner {
+      padding: clamp(28px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      animation: arrive 500ms ease both;
+    }
+
+    .letter h2 { margin-bottom: 28px; font-size: 38px; }
+    .letter p { margin: 0 0 18px; color: #4c4e48; font-size: 16px; }
+    .letter .signoff { margin-top: 30px; color: var(--ink); }
+    .letter .signoff span { color: var(--rose); font-family: "Playfair Display", Georgia, serif; font-size: 24px; font-style: italic; }
+    .next-step { margin-top: 28px; }
+    .read-button { text-decoration: none; }
+
+    footer {
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 40px, 540px); }
+      header { height: 66px; }
+      main {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 52px 0 56px;
+      }
+      .copy { order: 0; }
+      .photo-wrap { order: 1; aspect-ratio: 1.33; margin-right: 14px; }
+      .photo { object-position: 12% center; }
+      h1 { font-size: clamp(44px, 12vw, 62px); }
+      .intro { margin-top: 20px; }
+      .letter { padding-bottom: 54px; }
+      .letter h2 { font-size: 33px; }
+    }
+
+    @media (max-width: 390px) {
+      .page { width: calc(100% - 32px); }
+      .photo-wrap { aspect-ratio: 1.2; }
+      .letter-inner { padding: 26px 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="signature-mark">Zerlina</span>
+      <span>Sebuah pesan dengan tulus</span>
+    </header>
+
+    <main>
+      <section class="copy" aria-labelledby="page-title">
+        <p class="eyebrow">Untuk kamu</p>
+        <h1 id="page-title">Maaf ya, <span>Zerlina.</span></h1>
+        <p class="intro">Aku sudah memikirkan sikapku. Ada sesuatu yang ingin kusampaikan dengan sungguh-sungguh, tanpa bercanda kali ini.</p>
+        <button class="read-button" id="read-letter" type="button" aria-controls="letter" aria-expanded="false">
+          Baca suratku <span class="arrow" aria-hidden="true">&#8594;</span>
+        </button>
+      </section>
+
+      <div class="photo-wrap" aria-label="Foto berdua">
+        <img class="photo" src="foto-berdua.jpg" alt="Keduanya berfoto bersama di sebuah kafe, dengan jendela bercahaya di sisi mereka" fetchpriority="high">
+        <span class="photo-caption">Salah satu momen yang kusyukuri</span>
+      </div>
+    </main>
+
+    <section class="letter" id="letter" hidden aria-labelledby="letter-title">
+      <div class="letter-inner">
+        <h2 id="letter-title">Zerlina,</h2>
+        <p>Aku minta maaf karena candaan dan ucapanku sudah membuatmu menangis. Aku sadar aku telah melewati batas dan menyakitimu. Kamu tidak pantas diperlakukan seperti itu, terlebih olehku.</p>
+        <p>Niatku mungkin hanya bercanda, tapi itu tidak menghapus dampaknya. Aku seharusnya lebih peka melihat batas dan perasaanmu. Aku tidak ingin mencari alasan atau memintamu untuk langsung melupakan ini.</p>
+        <p>Aku akan berusaha lebih menjaga ucapanku dan mendengarkan saat kamu bilang sesuatu sudah kelewatan. Kalau kamu bersedia, aku ingin mendengar apa yang kamu rasakan dan memahami apa yang perlu kuperbaiki. Kamu juga boleh mengambil waktu yang kamu butuhkan.</p>
+        <p class="signoff">Maafkan aku, ya.<br><span>Dengan tulus</span></p>
+        <div class="next-step">
+          <a class="read-button" href="deep-talk.html">Baca ajakan ngobrol <span class="arrow" aria-hidden="true">&#8594;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer>Dibuat dengan tulus, untuk Zerlina Azaria.</footer>
+  </div>
+
+  <script>
+    const readButton = document.querySelector("#read-letter");
+    const letter = document.querySelector("#letter");
+
+    readButton.addEventListener("click", () => {
+      const isExpanded = readButton.getAttribute("aria-expanded") === "true";
+      readButton.setAttribute("aria-expanded", String(!isExpanded));
+      letter.hidden = isExpanded;
+      readButton.firstChild.textContent = isExpanded ? "Baca suratku " : "Tutup surat ";
+
+      if (!isExpanded) {
+        letter.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  </script>
+</body>
+</html>

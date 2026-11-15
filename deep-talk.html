@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <title>Boleh ngobrol berdua? | Untuk Zerlina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f2eb;
+      --ink: #302d28;
+      --muted: #656158;
+      --accent: #a35b43;
+      --line: #ddd6ca;
+      --leaf: #49675d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    header {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .signature {
+      color: var(--accent);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    .back-link {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration-color: #b6a99a;
+      text-underline-offset: 4px;
+    }
+
+    main {
+      min-height: calc(100vh - 142px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(42px, 7vw, 88px);
+      align-items: center;
+      padding: 64px 0 72px;
+    }
+
+    .photo-wrap {
+      position: relative;
+      aspect-ratio: 1.35;
+      background: #d4c8b7;
+    }
+
+    .photo-wrap::after {
+      position: absolute;
+      z-index: 1;
+      inset: 14px -14px -14px 14px;
+      border: 1px solid #9a8069;
+      content: "";
+      pointer-events: none;
+    }
+
+    .photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 12% center;
+    }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      padding: 10px 14px;
+      background: rgba(245, 242, 235, .95);
+      color: var(--leaf);
+      font-size: 12px;
+    }
+
+    .copy { max-width: 470px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 56px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.12;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .copy p {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .invitation {
+      margin-top: 28px;
+      padding-left: 18px;
+      border-left: 2px solid #b98568;
+      color: var(--ink) !important;
+    }
+
+    .back-button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 0 18px;
+      background: var(--ink);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .back-button:hover { background: var(--leaf); transform: translateY(-2px); }
+    .back-button:focus-visible { outline: 3px solid #c99170; outline-offset: 4px; }
+
+    footer {
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 40px, 540px); }
+      header { height: 66px; }
+      main {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 48px 0 56px;
+      }
+      .copy { order: 0; }
+      .photo-wrap { order: 1; aspect-ratio: 1.25; }
+      h1 { font-size: 44px; }
+    }
+
+    @media (max-width: 390px) {
+      .page { width: calc(100% - 32px); }
+      .photo-wrap { aspect-ratio: 1.2; }
+      h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="signature">Zerlina</span>
+      <a class="back-link" href="index.html">Kembali ke surat</a>
+    </header>
+
+    <main>
+      <div class="photo-wrap">
+        <img class="photo" src="foto-berdua.jpg" alt="Keduanya berfoto bersama di sebuah kafe, dengan jendela bercahaya di sisi mereka" fetchpriority="high">
+        <span class="photo-caption">Momen yang ingin kujaga</span>
+      </div>
+
+      <section class="copy" aria-labelledby="page-title">
+        <p class="eyebrow">Kalau kamu sudah siap</p>
+        <h1 id="page-title">Boleh ngobrol, <span>empat mata?</span></h1>
+        <p>Aku ingin mengajakmu date di Black Dew Cafe, Cembor, Pacet, dekat Trawas. Tempatnya punya pemandangan pegunungan, suasana sejuk, area duduk yang luas, dan banyak spot foto. Aku akan mencarikan tempat duduk yang nyaman supaya kita bisa ngobrol berdua dengan tenang. Aku ingin mendengarkan apa yang kamu rasakan dan memahami batas yang sudah kulewati, bukan membela diri.</p>
+        <p class="invitation">Kalau kamu bersedia, aku yang akan menyiapkan rencananya. Kalau kamu belum siap, nggak apa-apa. Aku akan menghargai perasaanmu dan tidak memaksa.</p>
+        <p><a class="back-link" href="https://maps.google.com/?q=Black+Dew+Cafe+Pacet" target="_blank" rel="noopener">Lihat lokasi Black Dew di Maps &#8599;</a></p>
+        <a class="back-button" href="index.html"><span aria-hidden="true">&#8592;</span> Kembali ke surat</a>
+      </section>
+    </main>
+
+    <footer>Dengan tenang, dan tanpa paksaan.</footer>
+  </div>
+</body>
+</html>
